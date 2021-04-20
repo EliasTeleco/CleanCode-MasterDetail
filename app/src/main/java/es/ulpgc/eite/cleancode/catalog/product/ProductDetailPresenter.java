@@ -22,7 +22,7 @@ public class ProductDetailPresenter implements ProductDetailContract.Presenter {
   }
 
 //  public ProductDetailPresenter(ProductDetailState state) {
-//    this.state = state;
+//   this.state = state;
 //  }
 
   @Override

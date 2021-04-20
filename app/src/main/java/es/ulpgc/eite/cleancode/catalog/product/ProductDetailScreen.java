@@ -1,5 +1,6 @@
 package es.ulpgc.eite.cleancode.catalog.product;
 
+
 import androidx.fragment.app.FragmentActivity;
 
 import java.lang.ref.WeakReference;
