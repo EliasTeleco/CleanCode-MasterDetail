@@ -1,8 +1,11 @@
 package es.ulpgc.eite.cleancode.catalog.products;
 
+import android.util.Log;
+
 import java.lang.ref.WeakReference;
 
 import es.ulpgc.eite.cleancode.catalog.app.CatalogMediator;
+import es.ulpgc.eite.cleancode.catalog.app.ProductDosItem;
 import es.ulpgc.eite.cleancode.catalog.app.ProductItem;
 
 
@@ -47,13 +50,22 @@ public class ProductListPresenter implements ProductListContract.Presenter {
 
   @Override
   public void fetchProductListData() {
-    // Log.e(TAG, "fetchProductListData()");
+     Log.e(TAG, "fetchProductListData()");
 
     // call the model
+    ProductDosItem productDos = getDataFromProductDos();
+    Log.e(TAG, productDos.id + "");
     state.products = model.fetchProductListData();
+
+
 
     view.get().displayProductListData(state);
 
+  }
+
+  private ProductDosItem getDataFromProductDos() {
+  ProductDosItem product = mediator.getProductDos();
+    return product;
   }
 
 
@@ -63,6 +75,11 @@ public class ProductListPresenter implements ProductListContract.Presenter {
     passDataToProductDetailScreen(item);
     //router.navigateToProductDetailScreen();
     view.get().navigateToProductDetailScreen();
+  }
+
+  @Override
+  public String devolverProducto() {
+    return model.devolverProducto();
   }
 
 

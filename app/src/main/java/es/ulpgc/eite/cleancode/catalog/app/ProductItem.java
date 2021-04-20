@@ -7,7 +7,7 @@ public class ProductItem {
   public final String content;
   public final String details;
 
-  public ProductItem(int id, String content, String details) {
+  public ProductItem(int id1, int id, String content, String details) {
     this.id = id;
     this.content = content;
     this.details = details;

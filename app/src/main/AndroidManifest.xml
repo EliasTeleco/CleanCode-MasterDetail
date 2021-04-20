@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="es.ulpgc.eite.cleancode.catalog">
+    xmlns:tools="http://schemas.android.com/tools"
+    package="es.ulpgc.eite.cleancode.catalog">
 
     <application
         android:allowBackup="true"
@@ -11,14 +12,6 @@
         android:theme="@style/AppTheme">
 
         <activity
-            android:name=".products.ProductListActivity"
-            android:theme="@style/AppTheme.NoActionBar">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-                <category android:name="android.intent.category.LAUNCHER"/>
-            </intent-filter>
-        </activity>
-        <activity
             android:name=".product.ProductDetailActivity"
             android:parentActivityName=".products.ProductListActivity"
             android:theme="@style/AppTheme.NoActionBar">
@@ -26,6 +19,32 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="es.ulpgc.eite.cleancode.catalog.products.ProductListActivity"/>
         </activity>
+        <activity
+            android:name=".productoDos.ProductDosActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".products.ProductListActivity"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:parentActivityName=".productoDos.ProductDosActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="es.ulpgc.eite.cleancode.catalog.productoDos.ProductDosActivity"/>
+        </activity>
+        <activity
+            android:name=".product.ProductDetailActivity"
+            android:parentActivityName=".products.ProductListActivity"
+            android:theme="@style/AppTheme.NoActionBar"
+            tools:ignore="DuplicateActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="es.ulpgc.eite.cleancode.catalog.products.ProductListActivity"/>
+        </activity>
+
     </application>
 
 </manifest>

@@ -1,12 +1,15 @@
 package es.ulpgc.eite.cleancode.catalog.app;
 
 import es.ulpgc.eite.cleancode.catalog.product.ProductDetailState;
+import es.ulpgc.eite.cleancode.catalog.productoDos.ProductDosState;
 import es.ulpgc.eite.cleancode.catalog.products.ProductListState;
 
 public class CatalogMediator {
 
   private ProductListState productListState = new ProductListState();
   private ProductDetailState productDetailState = new ProductDetailState();
+  private ProductDosState productDosState = new ProductDosState();
+  private ProductDosItem  productDosItem;
 
   private ProductItem product;
 
@@ -44,10 +47,22 @@ public class CatalogMediator {
     //product = null;
     return item;
   }
+  public ProductDosItem getProductDos() {
+    ProductDosItem item = productDosItem;
+    //product = null;
+    return item;
+  }
 
 
   public void setProduct(ProductItem item) {
-    product = item;
-  }
+    product = item; }
+
+    public ProductDosState getProductDosState() {
+
+    return productDosState; }
+
+  public void setProductDos(ProductDosItem item) {
+    productDosItem = item;  }
+
 
 }

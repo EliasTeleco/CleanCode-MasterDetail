@@ -22,10 +22,13 @@ interface ProductListContract {
 
     void fetchProductListData();
     void selectProductListData(ProductItem item);
+    String devolverProducto();
   }
 
   interface Model {
     List<ProductItem> fetchProductListData();
+
+      String devolverProducto();
   }
 
 //  interface Router {

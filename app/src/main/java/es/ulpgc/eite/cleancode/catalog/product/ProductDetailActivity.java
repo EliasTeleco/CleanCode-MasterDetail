@@ -23,6 +23,7 @@ public class ProductDetailActivity
   ProductDetailContract.Presenter presenter;
 
 
+
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
